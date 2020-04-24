@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  dockerized-dynamic-dns-netcup-api:
+    build: 
+      context: ./
+    environment: 
+      CUSTOMERNR: '12345'
+      APIKEY: 'foo'
+      APIPASSWORD: 'bar'
+      DOMAIN: 'example.com'
+      HOST: '*'
+      USE_IPV6: 'false'
+      CHANGE_TTL: 'true'
+      APIURL: 'https://ccp.netcup.net/run/webservice/servers/endpoint.php?JSON'
