@@ -9,6 +9,7 @@ services:
       APIPASSWORD: 'bar'
       DOMAIN: 'example.com'
       HOST: '*'
-      USE_IPV6: 'false'
+      USE_IPV6: 'true'
+      USE_IPV4: 'false'
       CHANGE_TTL: 'true'
       APIURL: 'https://ccp.netcup.net/run/webservice/servers/endpoint.php?JSON'

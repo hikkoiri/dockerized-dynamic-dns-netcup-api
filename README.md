@@ -8,6 +8,7 @@ This fork only adds three more features:
 1) The application is packaged and executed as docker container.
 2) Configurations are injected over environment variables.
 3) A cron job will execute the script each 5 minutes.
+4) A record updates can be disabled
 
 ## Test instructions
 

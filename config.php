@@ -15,6 +15,9 @@ define('HOST', getenv('HOST'));
 //Activate this only if you have IPv6 connectivity, or you *WILL* get errors.
 define('USE_IPV6', getenv('USE_IPV6'));
 
+//If set to false, the A record will not be updated.
+define('USE_IPV4', getenv('USE_IPV4'));
+
 //If set to true, this will change TTL to 300 seconds on every run if necessary.
 define('CHANGE_TTL', getenv('CHANGE_TTL'));
 
