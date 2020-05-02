@@ -24,12 +24,12 @@ if ($infoDnsZone = infoDnsZone(DOMAIN, CUSTOMERNR, APIKEY, $apisessionid)) {
     exit(1);
 }
 //TTL Warning
-if (CHANGE_TTL !== true && $infoDnsZone['responsedata']['ttl'] > 300) {
+if (CHANGE_TTL !== 'true' && $infoDnsZone['responsedata']['ttl'] > 300) {
     outputStdout("TTL is higher than 300 seconds - this is not optimal for dynamic DNS, since DNS updates will take a long time. Ideally, change TTL to lower value. You may set CHANGE_TTL to True in config.php, in which case TTL will be set to 300 seconds automatically.");
 }
 
 //If user wants it, then we lower TTL, in case it doesn't have correct value
-if (CHANGE_TTL === true && $infoDnsZone['responsedata']['ttl'] !== "300") {
+if (CHANGE_TTL === 'true' && $infoDnsZone['responsedata']['ttl'] !== "300") {
     $infoDnsZone['responsedata']['ttl'] = 300;
 
     if (updateDnsZone(DOMAIN, CUSTOMERNR, APIKEY, $apisessionid, $infoDnsZone['responsedata'])) {
@@ -46,7 +46,7 @@ if ($infoDnsRecords = infoDnsRecords(DOMAIN, CUSTOMERNR, APIKEY, $apisessionid))
     exit(1);
 }
 
-if (USE_IPV4 === true) {
+if (USE_IPV4 === 'true') {
     //Find the host defined in config.php
     $foundHostsV4 = array();
 
@@ -114,7 +114,7 @@ if (USE_IPV4 === true) {
     outputStdout("Skipped IPV4 configuration.");
 }
 
-if (USE_IPV6 === true) {
+if (USE_IPV6 === 'true') {
     //Find the host defined in config.php
     $foundHostsV6 = array();
 
